@@ -28,7 +28,8 @@ replacing ad-hoc manual deployments.
 
 | Document                                                                | Description                                                              |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [PAU Administered Agent Factory](./docs/PAUAdministeredAgentFactory.md)  | Deploy flow, role/permission matrix, configuration, and security notes. |
+| [PAU Administered Agent Factory](./docs/PAUAdministeredAgentFactory/README.md)  | Deploy flow, role/permission matrix, configuration, and security notes. |
+| [Sky Core Review Checklist](./docs/PAUAdministeredAgentFactory/checklist.md) | Reviewer checklist for validating deploy arguments before sign-off.     |
 
 ## Design
 
@@ -46,14 +47,14 @@ Per-factory mechanics — deploy flow, resulting role layout, and configuration 
 [`docs/`](./docs). The first, `PAUAdministeredAgentFactory`, builds on the
 [`diamond-pau`](https://github.com/sky-ecosystem/diamond-pau) PAU factory and the
 [`pau-administered-agent`](https://github.com/sky-ecosystem/pau-administered-agent) agent factory; see
-its [documentation](./docs/PAUAdministeredAgentFactory.md) for details.
+its [documentation](./docs/PAUAdministeredAgentFactory/README.md) for details.
 
 > **Auditor note.** Factory `src/` has no compile-time dependency on those repositories — it talks to
 > them only through inline `*Like` adapter interfaces, and the submodules are imported **only by the
 > tests**. They are pinned to pre-release refs — `pau-administered-agent` at the `v1.0.0-beta.0` tag and
 > `diamond-pau` at a non-release commit — and sit in the same audit slot as this factory; we may need to
 > re-pin or migrate once they ship a final release. See the
-> [dependency status note](./docs/PAUAdministeredAgentFactory.md#dependencies) for the exact refs.
+> [dependency status note](./docs/PAUAdministeredAgentFactory/README.md#dependencies) for the exact refs.
 
 ## Quick Start
 
